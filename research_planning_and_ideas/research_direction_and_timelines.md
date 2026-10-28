@@ -2,7 +2,10 @@
 
 ## Projects
 - GPU CorrCal
+    - paper applying corrcal to chord pathfinder data
 - Bandpass CorrCal
+    - bandpass related stuff (inference as hell)
+    - (2-3) papers here
 
 ## Timeline
 

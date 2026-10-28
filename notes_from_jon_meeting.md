@@ -1,0 +1,9 @@
+- salf talk 
+- gpu stuff: zeropadding gains
+- bandpass noise estimating
+- gpu direction
+- bandpass direction with inference
+- making thesis into manuscript with papers
+- feeling lost and not really sure how to take action 
+    - distraction caused by wanting more stats and data analysis and loving the interplay between math, data, and inference about a problem
+    - not feeling like I'm owning my own project
