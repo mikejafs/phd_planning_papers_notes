@@ -1,49 +1,70 @@
-CorrCal: statistical and numerical background
+# CorrCal: Statistical and Numerical Background
 
-These references explain how CorrCal's likelihood is built and why its optimization reduces to Ax = b problems that conjugate gradient can solve. CorrCal treats the sky as a Gaussian random field and marginalizes it out, which gives the covariance C = N + G(ΔΔᵀ + ΣΣᵀ)Gᴴ. It then minimizes dᴴC⁻¹d, optionally plus log det C, over the gains. The Woodbury identity makes C⁻¹ cheap because the sky terms are low rank. The objective is non-quadratic in the gains. It connects to Ax = b in two ways. First, nonlinear CG applies the logic of linear CG to a general function. Second, Gauss-Newton linearization produces the normal equations (JᴴC⁻¹J)δg = JᴴC⁻¹r at each step. Read in this order: Shewchuk, R&W, Bishop, Boyd, then Sievers 2017 (arXiv:1701.01860).
+Reading notes on how CorrCal's likelihood is built and why its optimization reduces to Ax = b problems solvable by conjugate gradient.
 
-Shewchuk, An Introduction to the Conjugate Gradient Method Without the Agonizing PainThis is the bridge between minimizing a quadratic form and solving Ax = b. Relevant sections:
+## Summary
 
-§3 shows that the quadratic form ½xᵀAx − bᵀx is minimized exactly where Ax = b.
+- **Sky model:** the sky is a Gaussian random field, marginalized out of the likelihood.
+- **Covariance:** C = N + G(ΔΔᵀ + ΣΣᵀ)Gᴴ
+  - N: noise
+  - Δ: redundant-baseline (diffuse sky) component
+  - Σ: point-source component
+  - G: per-visibility gain products
+- **Objective:** minimize dᴴC⁻¹d over the gains, optionally plus log det C.
+- **Cheap inverse:** the sky terms are low rank, so the Woodbury identity gives C⁻¹ cheaply.
+- **Link to Ax = b:** the objective is non-quadratic in the gains, and connects to linear solves in two ways:
+  1. **Nonlinear CG** applies the logic of linear CG to a general function.
+  2. **Gauss-Newton** linearization produces the normal equations (JᴴC⁻¹J) δg = JᴴC⁻¹r at each step.
 
-§7–9 derive linear CG and its convergence.
+**Reading order:** Shewchuk → Rasmussen & Williams → Bishop → Boyd & Vandenberghe → Sievers 2017
 
-§12 covers preconditioning.
+## Saved references
 
-§13 applies CG to the normal equations, which is the Gauss-Newton case.
+### Shewchuk, *An Introduction to the Conjugate Gradient Method Without the Agonizing Pain*
 
-§14 covers nonlinear CG, which the original CorrCal code uses through scipy.
+The bridge between minimizing a quadratic form and solving Ax = b.
 
-Rasmussen & Williams, Gaussian Processes for Machine LearningThis book has the same statistical structure as CorrCal: a latent Gaussian signal marginalized into the covariance, with parameters fit by maximizing the marginal likelihood. Relevant chapters:
+| Section | Content |
+|---|---|
+| §3 | ½xᵀAx − bᵀx is minimized exactly where Ax = b |
+| §7–9 | Derivation of linear CG and its convergence |
+| §12 | Preconditioning |
+| §13 | CG on the normal equations (the Gauss-Newton case) |
+| §14 | Nonlinear CG, used by the original CorrCal code through scipy |
 
-Ch. 2 covers the Gaussian model and the predictive and marginal distributions.
+### Rasmussen & Williams, *Gaussian Processes for Machine Learning*
 
-Ch. 5, especially §5.4, covers the marginal likelihood as a quadratic term plus log det, and its gradients with respect to covariance parameters. This is the analog of the gain gradients.
+Same statistical structure as CorrCal: a latent Gaussian signal marginalized into the covariance, with parameters fit by maximizing the marginal likelihood.
 
-Appendix A.3 covers the matrix identities: Woodbury and the determinant lemma, used for the low-rank inverse.
+| Section | Content |
+|---|---|
+| Ch. 2 | Gaussian model; predictive and marginal distributions |
+| Ch. 5 (esp. §5.4) | Marginal likelihood as quadratic term plus log det; gradients with respect to covariance parameters (analog of the gain gradients) |
+| App. A.3 | Matrix identities: Woodbury and the determinant lemma, used for the low-rank inverse |
 
-Bishop, Pattern Recognition and Machine LearningThis is the statistics foundation for linear-Gaussian models. Relevant sections:
+### Bishop, *Pattern Recognition and Machine Learning*
 
-§2.3, especially §2.3.3, shows that integrating out a linear-Gaussian latent variable adds its covariance to the noise. This is the core move in CorrCal.
+Statistics foundation for linear-Gaussian models.
 
-§3.1.1 shows that maximum likelihood under Gaussian noise reduces to least squares normal equations.
+| Section | Content |
+|---|---|
+| §2.3 (esp. §2.3.3) | Integrating out a linear-Gaussian latent variable adds its covariance to the noise. The core move in CorrCal |
+| §3.1.1 | Maximum likelihood under Gaussian noise reduces to least-squares normal equations |
+| §3.5 | Maximizing the evidence over hyperparameters |
 
-§3.5 covers maximizing the evidence over hyperparameters.
+### Boyd & Vandenberghe, *Convex Optimization*
 
-Boyd & Vandenberghe, Convex OptimizationThis supplies the estimation and numerical linear algebra side. Relevant sections:
+Estimation and numerical linear algebra.
 
-§7.1 covers ML estimation for linear measurements with Gaussian noise, and why the estimate is a prewhitened least squares problem.
+| Section | Content |
+|---|---|
+| §7.1 | ML estimation for linear measurements with Gaussian noise; why the estimate is a prewhitened least-squares problem |
+| App. C | Numerical linear algebra: matrix inversion lemma, block elimination for low-rank structure |
 
-Appendix C covers numerical linear algebra, including the matrix inversion lemma and block elimination for low-rank structure.
+## Not yet saved
 
-Not yet saved:
-
-Sievers 2017 (arXiv:1701.01860), the primary CorrCal paper.
-
-Liu et al. 2010 (arXiv:1001.5268), on logcal and lincal as linear least squares.
-
-Tegmark 1997 (astro-ph/9611130), on CMB map-making as a GLS problem solved with preconditioned CG.
-
-Hogg, Bovy & Lang (arXiv:1008.4686), on GLS normal equations.
-
-Kay, Estimation Theory, ch. 3 and 15, for Fisher information and Cramér-Rao bounds on the gains, if needed later.
+- [ ] **Sievers 2017** (arXiv:1701.01860): the primary CorrCal paper
+- [ ] **Liu et al. 2010** (arXiv:1001.5268): logcal and lincal as linear least squares
+- [ ] **Tegmark 1997** (astro-ph/9611130): CMB map-making as a GLS problem solved with preconditioned CG
+- [ ] **Hogg, Bovy & Lang 2010** (arXiv:1008.4686): GLS normal equations
+- [ ] **Kay, *Fundamentals of Statistical Signal Processing: Estimation Theory***, ch. 3 and 15: Fisher information and Cramér-Rao bounds on the gains (if needed later)

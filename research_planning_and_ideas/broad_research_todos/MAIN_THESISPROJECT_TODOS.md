@@ -16,3 +16,13 @@
 ## On-the-go 
 
 ## Urgent Notes
+
+### 2026
+
+### 11-02
+
+- Need to create overleaf doc for both back ground notes (pretty much already have this as the thesis, bnut need to clean up and organize in light of research doc rules set out last night)
+- also overleaf doc for gpu paper (either will end up being a thesis chapter or separate paper)
+- overleaf doc for pathfinder corrcal paper
+
+

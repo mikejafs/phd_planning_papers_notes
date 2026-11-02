@@ -16,6 +16,9 @@
 
 ## Topics I'm interested in exploring or are weak in
 
+***ONLY RESEARCH SUPPORT ITEMS ORRRRR TRUE NECESSARY BACKGROUND FOR THESIS LIT REVIEW***
+- To the above point, picture working on something background related that requires notes, though it is not even going to go in your thesis (or has the possibility of going in) as literature review. WHY ARE YOU EVEN WORKING ON THIS ANYWAY THEN...? **THIS IS THE ARGUMENT FOR ONLY BEING ON TOPIC -- NOTHING ELSE MATTERS**
+
     \item GPU programming
     \item Cosmology theory/cosmology inference
     \begin{itemize}
