@@ -72,7 +72,6 @@ Extra coding or software items tied to research. **Pull one out only outside wor
 
 ### Template
 
-```markdown
 #### <Item name>
 - **What:**
 - **Why:**
