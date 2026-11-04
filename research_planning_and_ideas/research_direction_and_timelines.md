@@ -9,6 +9,14 @@
 
 ## Timeline
 
+### Fall 2026
+       
+       - pathfinder paper draft done by dec, 
+       - gpu paper draft done by dec, 
+       - bandpass code/analysis done by nov (having most of paper draft done by end of dec), 
+       - some background for project done by dec
+
+
 ## Mini Projects influenced by research questions
 
     \item PS worksheet \& Ex Usage of Healpy
