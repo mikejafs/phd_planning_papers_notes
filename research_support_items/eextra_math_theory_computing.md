@@ -59,6 +59,16 @@ Potentially paired with the Erdos Institute program. Later items can start while
 - **Radiative processes:** keep the rough structure from the end of the course and work through the remainder of Rybicki & Lightman. Planned to resume in October unless other priorities or unfinished work take precedence.
 - **Full cosmology review:** notes in bookmarks, Baumann, Tong. Start with the CMB, then return to the basics.
 
+## Parked books (enter research support only when the trigger fires)
+
+| Book | Trigger | Read only |
+|---|---|---|
+| Thompson, Moran & Swenson | ACTIVE: Pathfinder methods, delay spectra | Interferometer response, bandwidth/delay effects, calibration |
+| Stochastic processes | Verifying the Poisson Δ covariance in bandpass | Poisson processes, Campbell's theorem |
+| E&M | Thesis background chapter | Radiative transfer as needed |
+| Quantum | Thesis background chapter (21 cm line) | Hyperfine structure |
+| Cosmology | Thesis background chapter / Pathfinder intro | 21 cm signal, power spectrum |
+
 ## Research support items
 
 Extra coding/Math/Theory or software items (***DIRECTLY***) tied to research. **Pull one out only outside work hours, or when the research genuinely requires it.** Each item must answer all four fields before it gets time.
