@@ -11,3 +11,12 @@
 
 #### Future background sims
 - Would dearly liike to be abel to throw together a sim that produces the 2D Fourier space result in good/bad cal etc and would be nice for presenting at conferences
+
+#### "Random" Math that actually is relevant
+- Basically see corrcal reading list
+    - GPR
+    - Bishop pattern rec and ML
+    - heirarchical bayes
+    - basic statistics and linear algebra (need to be fricken solid here)
+
+    
