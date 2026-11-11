@@ -19,4 +19,5 @@
     - heirarchical bayes
     - basic statistics and linear algebra (need to be fricken solid here)
 
-    
+#### For thesis
+- Good idea for background section to include simulations of sky based adnd red cal -- could be good to leave as the limiting cases of corrcal -- on a chord scale array to show how adding correlations changed things and why we need exquisite calibration 
