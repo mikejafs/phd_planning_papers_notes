@@ -21,3 +21,5 @@
 
 #### For thesis
 - Good idea for background section to include simulations of sky based adnd red cal -- could be good to leave as the limiting cases of corrcal -- on a chord scale array to show how adding correlations changed things and why we need exquisite calibration 
+- ***Include curvature estimater*** performance etc... in earlier gpu section of thesis -- good segway into why it may be necessary for bandpass side of things
+
